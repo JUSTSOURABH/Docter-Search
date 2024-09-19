@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Search</title>
+    <style>
+        /* General styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Search container */
+        .search-container {
+            width: 100%;
+            height: 90px;
+            background-color: #8a5656;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .search-container input[type="text"] {
+            width: calc(100% - 10px);
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 34px;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+
+        /* Doctor list container */
+        .ourteam-section {
+            margin-top: 20px;
+        }
+
+        /* Doctor list items */
+        .ourteam-inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .section-box {
+            width: calc(25% - 20px);
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .section-box h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .section-box p {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by name or specialization">
+    </div>
+
+    <div class="ourteam-section">
+
+        <div class="ourteam-inner" id="doctorList">
+            <div class="section-box">
+                <img src="images/ourteam1.png" alt="">
+                <h3>Dr.Ricky Doe</h3>
+                <p>assistant surgeon</p>
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam2.png" alt="">
+                <h3>Dr. Smith</h3>
+                <p>Heart surgeon</p>
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam3.png" alt="">
+                <h3>Dr. Sara Doe</h3>
+                <p>skin surgeon</p>
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam4.png" alt="">
+                <h3>Dr. Thomsan</h3>
+                <p>Eyes surgeon</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const doctors = [
+            { name: 'Dr. Ricky Doe', specialization: 'assistant surgeon' },
+            { name: 'Dr. Smith', specialization: 'Heart surgeon' },
+            { name: 'Dr. Sara Doe', specialization: 'Bone surgeon' },
+            { name: 'Dr. Thomsan', specialization: 'Eyes surgeon' }
+        ];
+
+        const doctorListContainer = document.getElementById('doctorList');
+        const searchInput = document.getElementById('searchInput');
+
+        function displayDoctors(doctorsToShow) {
+            doctorListContainer.innerHTML = ''; // Clear previous results
+            if (doctorsToShow.length === 0) {
+                doctorListContainer.innerHTML = '<p>No matching doctors found</p>';
+                return;
+            }
+            doctorsToShow.forEach(doctor => {
+                const doctorBox = document.createElement('div');
+                doctorBox.classList.add('section-box');
+                doctorBox.innerHTML = `
+                    <img src="images/ourteam${doctors.indexOf(doctor) + 1}.png" alt="">
+                    <h3>${doctor.name}</h3>
+                    <p>${doctor.specialization}</p>
+                    
+            
+                `;
+                doctorListContainer.appendChild(doctorBox);
+            });
+        }
+
+        function filterDoctors(searchTerm) {
+            const filteredDoctors = doctors.filter(doctor =>
+                doctor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                doctor.specialization.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            displayDoctors(filteredDoctors);
+        }
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm === '') {
+                doctorListContainer.innerHTML = ''; // Clear   input is empty
+                return;
+            }
+            filterDoctors(searchTerm);
+            doctorListContainer.style.display = 'flex'; // Show the doctorc
+        });
+
+        // Display all
+        displayDoctors(doctors);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Search & Appointment</title>
+    <style>
+        /* General styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Search container */
+        .search-container {
+            width: 100%;
+            height: 30px;
+            background-color: #f2f2f2;
+            padding: 5px;
+        }
+
+        .search-container input[type="text"] {
+            width: calc(100% - 10px);
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+
+        /* Doctor list container */
+        .ourteam-section {
+            margin-top: 20px;
+        }
+
+        /* Doctor list items */
+        .ourteam-inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .section-box {
+            width: calc(25% - 20px);
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .section-box h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .section-box p {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Appointment form */
+        .appointment-form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .appointment-form h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .appointment-form input[type="text"],
+        .appointment-form input[type="email"],
+        .appointment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .appointment-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .appointment-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ourteam-section">
+
+        <div class="ourteam-inner" id="doctorList">
+            <div class="section-box">
+                <img src="images/ourteam1.png" alt="">
+                <h3>Dr. Ricky Doe</h3>
+                <p>assistant surgeon</p>
+
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam2.png" alt="">
+                <h3>Dr. Smith</h3>
+                <p>Heart surgeon</p>
+
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam3.png" alt="">
+                <h3>Dr. Sara Doe</h3>
+                <p>s\Skin surgeon</p>
+
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam4.png" alt="">
+                <h3>Dr. Thomsan</h3>
+                <p>Eyes surgeon</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="appointment-form">
+        <h2>Book an Appointment</h2>
+        <form id="appointmentForm" action="/submit-appointment">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="doctor">Doctor:</label>
+            <select id="doctor" name="doctor" required>
+                <option value="">Select Doctor</option>
+                <option value="Dr. Ricky Doe">Dr. Ricky Doe</option>
+                <option value="Dr. Smith">Dr. Smith</option>
+                <option value="Dr. Sara Doe">Dr. Sara Doe</option>
+                <option value="Dr. Thomsan">Dr. Thomsan</option>
+            </select>
+
+            <label for="message">Message (optional):</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <input type="submit" value="Book Appointment">
+        </form>
+    </div>
+</body>
+
+</html>

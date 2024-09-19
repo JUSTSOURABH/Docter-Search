@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" id="logo"><span>Find</span> My Doctor</a>
+        <nav class="navbar">
+            <a href="./index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#con">contact us</a>
+        </nav>
+
+    </header>
+    <div class="container">
+        <div class="main-text">
+            <h2 class="animate-text">Connecting you with top-rated healthcare professionals near you.</h2>
+            <a href="./appo.html"> <button class="book">Book Now</button></a>
+            <a href="./search.html"><button class="book">Search Now</button></a>
+        </div>
+        <script>
+            gsap.from(".animate-text", { opacity: 0, y: -50, duration: 1, delay: 0.8 });
+        </script>
+    </div>
+    <!-- services we provide -->
+    <div class="service-section">
+        <h2 id="ourservices">our services</h2>
+        <div class="inner-service-section">
+            <div class="service-box">
+                <h2>Find Docter</h2>
+                <p>Easy find best docter for your health.</p>
+            </div>
+            <div class="service-box">
+                <h2>Appointment</h2>
+                <p>He who has health, has hope; and he who has hope, has everything.</p>
+            </div>
+            <div class="service-box">
+                <h2>Best Treatment</h2>
+                <p>The great physician treats the patient who has the disease.</p>
+            </div>
+            <div class="service-box">
+                <h2>Feedback</h2>
+                <p>We all need people who will give us feedback. That's how we improve.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        gsap.from(".service-box", { opacity: 0, y: 50, stagger: 0.2, duration: 1 });
+    </script>
+    <!-- how we works -->
+    <div class="work-section" id="about">
+        <div class="inner-work-section">
+            <h2>How we works</h2>
+            <p class="text-work">A doctor search website typically allows users to find and connect with healthcare
+                providers based on various criteria such as location, specialty, availability, patient reviews, and
+                accepted insurance plans. :</p>
+            <div class="myimages">
+                <div class="inner-images">
+                    <img src="images/work1.png" alt="">
+                    <p class="text-work">Here's how such a website might work </p>
+                </div>
+                <div class="inner-images">
+                    <img src="images/work2.png" alt="">
+                    <p> </p>
+                </div>
+            </div>
+        </div>
+        <div class="inner-work-section scnclass">
+            <h2>our creativity</h2>
+            <p class="text-work1">Enhance your doctor search website with virtual consultations, personalized health
+                dashboards, and an interactive symptom checker. Utilize AI for personalized doctor recommendations and
+                foster community engagement through forums. </p>
+
+            <p class="text-work1">Provide concise descriptions of heart treatment options such as medication,
+                surgery, and lifestyle changes. Highlight the benefits and risks of each approach, emphasizing the
+                importance of individualized care and regular follow-ups.
+            </p>
+
+            <a href="#" class="btn"> <span> Eyes treatment</span></a>
+            <a href="#" class="btn"> <span> Skin treatment</span></a>
+            <a href="#" class="btn"> <span> Heart treatment</span></a>
+            <a href="#" class="btn"> <span> Other treatment</span></a>
+        </div>
+    </div>
+    <!-- our team seaction -->
+    <div class="ourteam-section">
+        <h2><span>our</span> team</h2>
+        <div class="ourteam-inner">
+            <div class="section-box">
+                <img src="images/ourteam1.png" alt="">
+                <h3>Dr.Ricky Doe</h3>
+                <p>assistant surgeon</p>
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam2.png" alt="">
+                <h3>Dr. Smith</h3>
+                <p>Heart surgeon</p>
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam3.png" alt="">
+                <h3>Dr.sara Doe</h3>
+                <p>skin surgeon</p>
+            </div>
+            <div class="section-box">
+                <img src="images/ourteam4.png" alt="">
+                <h3>Dr. thomsan</h3>
+                <p>Eyes surgeon</p>
+            </div>
+        </div>
+    </div>
+    <!-- creating footer -->+
+    <div class="main-footer" id="con">
+        <h2 class="contact">Contact us</h2>
+        <div class="inner-footer">
+            <h2>get in touch</h2> <a href="">Phone No:6263987XXX</a>
+            <a href="#">Mail:sourabhnimoda31@gmail.com</a>
+            <a href="#">Narmadapur MP</a>
+        </div>
+        <div class="inner-footer">
+            <h2>quick links</h2>
+            <a href="https://www.instagram.com/just_sourabhh">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+            <a href="#">GitHub</a>
+        </div>,
+        <div class="inner-footer">
+            <h2>services</h2>
+            <a href="#">Find Docter</a>
+            <a href="#">Appointment</a>
+            <a href="#">Feedback</a>
+            <a href="#">More</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
